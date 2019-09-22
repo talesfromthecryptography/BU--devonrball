@@ -24,14 +24,14 @@ void bu_cpy(bigunsigned *dest, bigunsigned *src);
 void bu_clear(bigunsigned *a_ptr);
 
 //  a = b<<cnt
-void bu_shl(bigunsigned* a_ptr, uint16_t cnt);
+void bu_shl(bigunsigned* a_ptr, bigunsigned* a_ptr2, uint16_t cnt);
 //  a <<= cnt
 // Shift in place a big unsigned by cnt bits to the left
 // Example: beef shifted by 4 results in beef0
 void bu_shl_ip(bigunsigned* a_ptr, uint16_t cnt);
 
 //  a = b>>cnt
-void bu_shr(bigunsigned* a_ptr, uint16_t cnt);
+void bu_shr(bigunsigned* a_ptr, bigunsigned* a_ptr, uint16_t cnt);
 //  a >>= cnt
 // Shift in place a big unsigned by cnt bits to the left
 // Example: beef shifted by 4 results in beef0
@@ -42,7 +42,7 @@ void bu_add(bigunsigned *a_ptr, bigunsigned *b_ptr, bigunsigned *c_ptr);
 //  a += b
 void bu_add_ip(bigunsigned *a_ptr, bigunsigned *b_ptr);
 // return the length in bits (should always be less or equal to 32*a->used)
-
+//just the length?
 
 // a = b*d
 void bu_mul_digit(bigunsigned *a_ptr, bigunsigned *b_ptr, uint32_t d);
@@ -86,7 +86,7 @@ static inline uint8_t hex2bin(char c) {
 //        be legal input resulting in te value 0xDEADBEEF.
 
 void bu_readhex(bigunsigned * a_ptr, char *s);
-// 
+//
 void bu_dbg_printf(bigunsigned *a_ptr);
 
 #endif
